@@ -1,0 +1,69 @@
+.error404 {
+	&__section,
+	#post-467 {
+		background: #16202a url('../images/404.png') repeat center center / contain;
+		text-align: center;
+
+		@include breakpoint(small only) {
+			background-image: url('../images/404-mobile.png ');
+		}
+
+		@include breakpoint(medium) {
+			padding-top: rem-calc(100);
+			padding-bottom: rem-calc(100);
+		}
+
+		h1,
+		h2,
+		h3,
+		h4,
+		h5,
+		h6 {
+			font-size: rem-calc(22);
+			font-weight: 600;
+			max-width: rem-calc(550);
+			margin-left: auto;
+			margin-right: auto;
+			margin-top: rem-calc(50);
+		}
+
+		p {
+			color: $text-secondary;
+			max-width: rem-calc(550);
+			margin-top: rem-calc(25);
+			margin-bottom: rem-calc(30);
+			margin-left: auto;
+			margin-right: auto;
+		}
+
+		a {
+			color: $primary;
+
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+
+		.icon-link {
+			max-width: rem-calc(550);
+			display: inline-flex;
+			gap: rem-calc(10);
+			align-items: center;
+			color: $white;
+			font-weight: 600;
+
+			i {
+				font-size: rem-calc(20);
+			}
+
+			&:hover {
+				color: $primary;
+				text-decoration: none;
+
+				i {
+					color: $primary;
+				}
+			}
+		}
+	}
+}

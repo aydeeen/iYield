@@ -1,0 +1,164 @@
+@import 'imports';
+
+.b-accordion {
+	background-position: center center;
+	border-radius: rem-calc(80) rem-calc(80) 0 0;
+	position: relative;
+
+	@include breakpoint(small only) {
+		border-radius: rem-calc(20) rem-calc(20) 0 0;
+	}
+
+	@include breakpoint(medium) {
+		padding-bottom: rem-calc(150);
+		padding-top: rem-calc(35);
+	}
+
+	&__overlay {
+		width: rem-calc(40);
+		max-width: rem-calc(1000);
+		height: rem-calc(1000);
+		border-radius: rem-calc(1200);
+		background-color: #15202b;
+		box-shadow: 0 0 100px 100px #15202b;
+		position: absolute;
+		top: 150px;
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&__grid {
+		z-index: 1;
+		position: relative;
+	}
+
+	&__title {
+		@include heading;
+
+		margin: rem-calc(32) 0 0 0;
+
+		@include breakpoint(small only) {
+			margin-top: 0;
+		}
+	}
+
+	.accordion {
+		margin-top: rem-calc(56);
+		margin-bottom: 0;
+		background: transparent;
+
+		@include breakpoint(small only) {
+			margin-top: rem-calc(40);
+		}
+
+		.accordion-item {
+			background-color: #293546;
+			border-radius: rem-calc(12);
+			padding: rem-calc(32);
+
+			&.is-active > .accordion-title::before {
+				color: $white;
+			}
+
+			&:not(:last-child) {
+				margin-bottom: rem-calc(16);
+			}
+		}
+
+		.accordion-title {
+			@include subheading;
+
+			color: $white;
+			font-weight: 700;
+			border: none;
+			padding: 0;
+
+			&:hover,
+			&:focus {
+				background-color: #293546;
+			}
+
+			&::before {
+				color: $text-secondary;
+				top: rem-calc(-4);
+				margin-top: 0;
+				font-size: rem-calc(24);
+
+				@include breakpoint(small only) {
+					right: rem-calc(-20);
+				}
+			}
+
+			@include breakpoint(medium only) {
+				padding-right: rem-calc(35);
+			}
+		}
+
+		.accordion-content {
+			background-color: #293546;
+			border: none;
+			padding: 0;
+			margin-top: rem-calc(16);
+
+			* {
+				color: $text-secondary;
+			}
+
+			p {
+				margin-bottom: 0;
+			}
+
+			a {
+				color: $primary;
+				text-decoration: none;
+
+				&:hover {
+					color: #8d2b9c;
+
+					* {
+						color: inherit;
+					}
+				}
+
+				&:visited {
+					color: #c1cfeb;
+
+					* {
+						color: #c1cfeb;
+					}
+
+					&:hover {
+						color: #5473fa;
+
+						* {
+							color: #5473fa;
+						}
+					}
+				}
+
+				* {
+					color: inherit;
+					text-decoration: inherit;
+				}
+			}
+		}
+	}
+
+	&.b-accordion.b-accordion {
+		&--two-columns .accordion {
+			@include xy-cell($gutters: 0);
+
+			@include breakpoint(medium) {
+				@include xy-cell(50%);
+
+				&:first-child() {
+					margin-left: 0;
+				}
+
+				&:last-child() {
+					margin-right: 0;
+				}
+			}
+		}
+	}
+}

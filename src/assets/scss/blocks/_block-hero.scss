@@ -1,0 +1,98 @@
+.b-hero {
+	background-position: center center;
+	position: relative;
+
+	@include breakpoint(small only) {
+		padding-top: rem-calc(20);
+	}
+
+	&__overlay-first {
+		width: 40%;
+		max-width: rem-calc(1000);
+		height: rem-calc(1000);
+		border-radius: rem-calc(1200);
+		background-color: #15202b;
+		box-shadow: 0 0 100px 100px #15202b;
+		position: absolute;
+		top: rem-calc(75);
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&__overlay-second {
+		width: 60%;
+		max-width: rem-calc(1200);
+		height: rem-calc(800);
+		border-radius: rem-calc(1200);
+		opacity: 0.15;
+		background-color: $primary;
+		box-shadow: 0 0 200px 200px $primary;
+		position: absolute;
+		top: rem-calc(325);
+		left: 50%;
+		transform: translateX(-50%);
+	}
+
+	&__grid {
+		z-index: 1;
+		position: relative;
+	}
+
+	&__logo {
+		max-width: rem-calc(256);
+
+		@include breakpoint(small only) {
+			display: none;
+		}
+	}
+
+	&__title {
+		color: $white;
+		font-weight: 600;
+		margin: rem-calc(32) 0;
+		font-size: 3.4rem;
+
+		@include breakpoint(small only) {
+			font-size: 2.25rem;
+			margin-top: 0;
+		}
+
+		@include breakpoint(medium only) {
+			font-size: 2.8rem;
+		}
+
+		@include breakpoint(large only) {
+			font-size: 3.2rem;
+		}
+	}
+
+	&__subtitle {
+		@include subheading;
+
+		margin-bottom: rem-calc(32);
+	}
+
+	&__button-wrapper {
+		@include button;
+
+		margin-bottom: 1rem;
+		text-align: center;
+	}
+
+	&__description {
+		max-width: rem-calc(1000);
+		margin: 0 auto;
+		text-align: start;
+		margin-top: rem-calc(-20);
+		margin-bottom: rem-calc(-287);
+		color: $text-primary;
+
+		@include breakpoint(medium only) {
+			margin-top: rem-calc(-10);
+		}
+
+		@include breakpoint(small only) {
+			margin-top: 0;
+		}
+	}
+}

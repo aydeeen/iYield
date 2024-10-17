@@ -1,0 +1,106 @@
+@import 'family';
+
+@mixin full-width {
+	position: relative;
+	left: 50%;
+	width: 100vw;
+	margin-left: -50vw;
+}
+
+@mixin ie-only {
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		@content;
+	}
+}
+
+@mixin heading {
+	color: $white;
+	font-weight: 600;
+	font-size: 2.6rem;
+
+	@include breakpoint(small only) {
+		font-size: 1.8125rem;
+	}
+
+	@include breakpoint(medium only) {
+		font-size: 2.2rem;
+	}
+
+	@include breakpoint(large only) {
+		font-size: 2.4rem;
+	}
+}
+
+@mixin subheading {
+	font-size: 1.4rem;
+	color: $text-secondary;
+
+	@include breakpoint(small only) {
+		font-size: 1.1875rem;
+	}
+
+	@include breakpoint(medium only) {
+		font-size: 1.2rem;
+	}
+
+	@include breakpoint(large only) {
+		font-size: 1.2rem;
+	}
+}
+
+@mixin button {
+	a {
+		font-size: rem-calc(16);
+		font-weight: 600;
+		border-radius: rem-calc(12);
+		color: $white !important;
+		background-color: $primary;
+		box-shadow: 0 3px 1px -2px rgba(0, 0, 0, 0.2),
+			0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12);
+		transition: background-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+			box-shadow 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+			border-color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms,
+			color 250ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+		gap: rem-calc(8);
+		padding: rem-calc(11) rem-calc(15);
+		margin-bottom: 0;
+
+		&:hover {
+			background-color: #8d2b9c;
+			box-shadow: 0 2px 4px -1px rgba(0, 0, 0, 0.2),
+				0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12);
+		}
+
+		&:active {
+			box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+				0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
+		}
+
+		svg {
+			width: rem-calc(24) !important;
+			height: rem-calc(24);
+		}
+	}
+}
+
+@mixin divider {
+	display: flex;
+	margin-top: rem-calc(32);
+	margin-bottom: rem-calc(32);
+	gap: rem-calc(8);
+
+	div {
+		&:first-child {
+			border: 1px solid $primary;
+			border-radius: rem-calc(24);
+			width: rem-calc(24);
+			box-shadow: 0 4px 6px 0 $primary;
+		}
+
+		&:last-child {
+			border: 1px solid #293546;
+			border-radius: rem-calc(24);
+			width: 100%;
+		}
+	}
+}

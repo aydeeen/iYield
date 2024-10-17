@@ -1,0 +1,74 @@
+.b-features {
+	border-radius: rem-calc(80) rem-calc(80) 0 0;
+	background-color: #15202b;
+	margin-top: rem-calc(-75);
+	padding-top: rem-calc(350);
+
+	@include breakpoint(small only) {
+		border-radius: rem-calc(20) rem-calc(20) 0 0;
+	}
+
+	@include breakpoint(medium) {
+		padding-bottom: rem-calc(100);
+	}
+
+	&__title {
+		@include heading;
+
+		margin-bottom: rem-calc(55);
+	}
+
+	&__layout {
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: rem-calc(24);
+
+		@include breakpoint(medium only) {
+			grid-template-columns: repeat(2, 1fr);
+		}
+
+		@include breakpoint(small only) {
+			grid-template-columns: repeat(1, 1fr);
+		}
+	}
+
+	&__box {
+		display: flex;
+		align-items: center;
+		gap: rem-calc(20);
+		background-color: #1c2735;
+		height: 100%;
+		padding: rem-calc(20);
+
+		@include breakpoint(small only) {
+			position: relative;
+			left: 50%;
+			margin-left: -50vw;
+			width: 100vw;
+		}
+
+		@include breakpoint(medium) {
+			border-radius: rem-calc(12);
+		}
+
+		.icon-wrapper {
+			border-radius: rem-calc(12);
+			background: #15202b;
+			padding: rem-calc(16);
+			height: rem-calc(56);
+			flex-shrink: 0;
+
+			svg {
+				font-size: rem-calc(24);
+				width: rem-calc(30);
+				color: #b266cc;
+				vertical-align: baseline;
+			}
+		}
+
+		span {
+			line-height: rem-calc(20);
+			color: $text-primary;
+		}
+	}
+}

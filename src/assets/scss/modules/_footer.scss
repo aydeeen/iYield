@@ -1,0 +1,146 @@
+.footer {
+	border-top: 1px solid #293546;
+	background-color: #15202b;
+	padding-top: rem-calc(100);
+	padding-bottom: rem-calc(45);
+
+	&.in-hamb-meni {
+		display: none;
+	}
+
+	@include breakpoint(small only) {
+		padding-top: rem-calc(20);
+		padding-bottom: rem-calc(20);
+
+		&.in-hamb-meni {
+			display: block;
+			align-self: flex-start;
+		}
+	}
+
+	&__grid {
+		justify-content: space-between;
+
+		> .cell:nth-child(2) {
+			@include breakpoint(medium) {
+				margin-left: auto;
+				margin-right: auto;
+			}
+		}
+	}
+
+	.logo {
+		max-width: rem-calc(180);
+
+		@include breakpoint(small only) {
+			max-width: rem-calc(112);
+		}
+	}
+
+	.tagline {
+		color: $text-secondary;
+		margin-bottom: 0;
+
+		@include breakpoint(medium) {
+			font-size: rem-calc(18);
+		}
+	}
+
+	&__divider {
+		@include divider;
+
+		margin-top: rem-calc(20);
+		margin-bottom: rem-calc(15);
+		max-width: rem-calc(540);
+	}
+
+	&__navigation {
+		display: flex;
+		flex-direction: column;
+		gap: rem-calc(40);
+
+		@include breakpoint(small only) {
+			flex-direction: row;
+			justify-content: space-between;
+			gap: rem-calc(8);
+			flex-wrap: wrap;
+		}
+
+		a {
+			display: inline-flex;
+			align-items: center;
+			gap: rem-calc(10);
+			width: fit-content;
+			color: $text-secondary !important;
+			font-size: rem-calc(14);
+			font-weight: 600;
+
+			@include breakpoint(small only) {
+				font-size: rem-calc(12);
+				gap: rem-calc(8);
+				font-weight: 400;
+			}
+
+			&:hover {
+				text-decoration: underline;
+			}
+
+			svg {
+				font-size: rem-calc(21);
+				width: rem-calc(26);
+				color: #455670;
+			}
+		}
+	}
+
+	&__bottom {
+		display: flex;
+		align-items: center;
+		justify-content: center;
+
+		@include breakpoint(small only) {
+			flex-direction: column-reverse;
+			gap: 1rem;
+		}
+
+		@include breakpoint(medium) {
+			margin-top: rem-calc(20);
+		}
+
+		.copyright {
+			font-size: rem-calc(14);
+			color: #455670;
+			margin: 0 auto;
+
+			@include breakpoint(small only) {
+				font-size: rem-calc(12);
+			}
+		}
+
+		.socials {
+			display: flex;
+			align-items: center;
+			gap: rem-calc(16);
+
+			a {
+				svg {
+					color: #889ebe;
+					font-size: rem-calc(23);
+					transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+				}
+
+				&:hover {
+					svg {
+						color: $primary;
+					}
+				}
+			}
+		}
+	}
+}
+
+.blog {
+	.footer:not(.in-hamb-meni) {
+		border-top: none;
+	}
+}

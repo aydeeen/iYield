@@ -1,0 +1,35 @@
+.b-message {
+	background: #293546;
+	border-radius: rem-calc(8);
+	border-left: 4px solid #c05ecf;
+	margin-bottom: 1rem;
+	padding: rem-calc(30);
+
+	&__header {
+		display: flex;
+		align-items: center;
+		gap: rem-calc(10);
+		margin-bottom: 1rem;
+
+		svg {
+			color: #c05ecf;
+		}
+
+		h4 {
+			color: #c05ecf;
+			margin-bottom: 0;
+			font-weight: 700 !important;
+			font-size: rem-calc(16) !important;
+		}
+	}
+
+	&__content {
+		* {
+			color: $text-primary;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

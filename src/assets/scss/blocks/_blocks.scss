@@ -1,0 +1,20 @@
+/*
+ * Files inside this folder without the _ prefix will be compiled as separate files.
+ * Files with the _ prefix are seen as partials and need to be imported in other files.
+ */
+
+// All styles regrding blocks outside of this theme.
+
+// wordpress default block.
+.wp-block-columns {
+	@include xy-grid-container($global-width);
+}
+
+@import 'block-hero';
+@import 'block-features';
+@import 'block-assets';
+@import 'block-about';
+@import 'block-message';
+@import 'block-eckb';
+@import 'block-testimonials';
+@import 'block-video';

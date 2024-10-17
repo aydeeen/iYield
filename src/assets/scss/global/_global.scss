@@ -1,0 +1,57 @@
+// Place helper classes like .align-left, .h1-like, .hide-mobile, etc. here
+// Also standard styles for elements like h1, table, ul, li, etc.
+
+@import 'accessibility';
+@import 'fonts';
+@import 'wp-admin';
+@import 'wp-overrides';
+@import 'gutenberg';
+@import 'section';
+
+.full-width {
+	@include full-width;
+}
+
+/* fix recaptcha position in reveals */
+.is-reveal-open .recaptcha-wrapper {
+	position: fixed !important;
+	z-index: 99999;
+}
+
+.edit-link {
+	display: none;
+}
+
+figcaption {
+	font-size: rem-calc(13);
+	text-align: center;
+	padding-top: 3px;
+}
+
+a {
+	transition: all 225ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+
+	&:hover {
+		color: #8d2b9c;
+	}
+
+	&:visited {
+		color: $text-secondary;
+
+		&:hover {
+			color: #5473fa;
+		}
+	}
+}
+
+.image-border {
+	box-shadow: 0 0 9px 0 rgba(9, 15, 21, 1);
+
+	img {
+		box-shadow: 0 0 9px 0 rgba(9, 15, 21, 1);
+	}
+}
+
+.wp-block-image {
+	box-shadow: none;
+}
